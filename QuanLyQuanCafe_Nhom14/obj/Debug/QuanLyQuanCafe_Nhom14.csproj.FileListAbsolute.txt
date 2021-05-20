@@ -1,0 +1,13 @@
+C:\Users\vanqu\source\repos\QuanLyQuanCafe_Nhom14\QuanLyQuanCafe_Nhom14\bin\Debug\QuanLyQuanCafe_Nhom14.exe.config
+C:\Users\vanqu\source\repos\QuanLyQuanCafe_Nhom14\QuanLyQuanCafe_Nhom14\bin\Debug\QuanLyQuanCafe_Nhom14.exe
+C:\Users\vanqu\source\repos\QuanLyQuanCafe_Nhom14\QuanLyQuanCafe_Nhom14\bin\Debug\QuanLyQuanCafe_Nhom14.pdb
+C:\Users\vanqu\source\repos\QuanLyQuanCafe_Nhom14\QuanLyQuanCafe_Nhom14\bin\Debug\Guna.UI2.dll
+C:\Users\vanqu\source\repos\QuanLyQuanCafe_Nhom14\QuanLyQuanCafe_Nhom14\obj\Debug\QuanLyQuanCafe_Nhom14.Properties.Resources.resources
+C:\Users\vanqu\source\repos\QuanLyQuanCafe_Nhom14\QuanLyQuanCafe_Nhom14\obj\Debug\QuanLyQuanCafe_Nhom14.csproj.GenerateResource.cache
+C:\Users\vanqu\source\repos\QuanLyQuanCafe_Nhom14\QuanLyQuanCafe_Nhom14\obj\Debug\QuanLyQuanCafe_Nhom14.csproj.CoreCompileInputs.cache
+C:\Users\vanqu\source\repos\QuanLyQuanCafe_Nhom14\QuanLyQuanCafe_Nhom14\obj\Debug\QuanLyQuanCafe_Nhom14.csproj.CopyComplete
+C:\Users\vanqu\source\repos\QuanLyQuanCafe_Nhom14\QuanLyQuanCafe_Nhom14\obj\Debug\QuanLyQuanCafe_Nhom14.exe
+C:\Users\vanqu\source\repos\QuanLyQuanCafe_Nhom14\QuanLyQuanCafe_Nhom14\obj\Debug\QuanLyQuanCafe_Nhom14.pdb
+C:\Users\vanqu\source\repos\QuanLyQuanCafe_Nhom14\QuanLyQuanCafe_Nhom14\obj\Debug\QuanLyQuanCafe_Nhom14.QuanLyBanHang.resources
+C:\Users\vanqu\source\repos\QuanLyQuanCafe_Nhom14\QuanLyQuanCafe_Nhom14\obj\Debug\QuanLyQuanCafe_Nhom14.Main.resources
+C:\Users\vanqu\source\repos\QuanLyQuanCafe_Nhom14\QuanLyQuanCafe_Nhom14\obj\Debug\QuanLyQuanCafe_Nhom14.csprojAssemblyReference.cache
