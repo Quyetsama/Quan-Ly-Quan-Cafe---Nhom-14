@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QuanLyQuanCafe_Nhom14.DAO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -11,15 +12,11 @@ using System.Windows.Forms;
 
 namespace QuanLyQuanCafe_Nhom14
 {
-    public partial class Main : Form
+    public partial class Login : Form
     {
-        public Main()
+        public Login()
         {
             InitializeComponent();
-            quanLyBanHang1.BringToFront();
-            this.Text = string.Empty;
-            this.ControlBox = false;
-            this.DoubleBuffered = true;
         }
 
         private void guna2ImageButton2_Click(object sender, EventArgs e)
@@ -33,26 +30,44 @@ namespace QuanLyQuanCafe_Nhom14
         }
 
 
+        public bool CheckLogin(string username, string password)
+        {
+            string query = "exec USP_Login @userName , @passWord"; //split ' '
+            DataTable result = DataProvider.Instance.ExecuteQuery(query, new object[] { username, password });
+            return result.Rows.Count > 0;
+        }
+
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            if (CheckLogin(txtUserName.Text, txtPassWord.Text))
+            {
+                this.Hide();
+                Main fMain = new Main();
+                fMain.Show();
+            }
+            else
+            {
+                MessageBox.Show("Sai thông tin đăng nhập");
+            }
+        }
+
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+
+
         //Drag Form
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
         private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
 
-        private void guna2Panel1_MouseDown(object sender, MouseEventArgs e)
+        private void guna2Panel2_MouseDown(object sender, MouseEventArgs e)
         {
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
-        }
-
-        private void btnQuanLyBanHang_Click(object sender, EventArgs e)
-        {
-            quanLyBanHang1.BringToFront();
-        }
-
-        private void btnBaoCaoThongKe_Click(object sender, EventArgs e)
-        {
-            baoCao_ThongKe1.BringToFront();
         }
     }
 }
