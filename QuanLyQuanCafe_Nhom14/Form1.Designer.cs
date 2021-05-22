@@ -31,6 +31,8 @@ namespace QuanLyQuanCafe_Nhom14
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.guna2ImageButton3 = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.lblDisplayName = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.guna2ImageButton2 = new Guna.UI2.WinForms.Guna2ImageButton();
             this.guna2ImageButton1 = new Guna.UI2.WinForms.Guna2ImageButton();
@@ -52,6 +54,8 @@ namespace QuanLyQuanCafe_Nhom14
             // guna2Panel1
             // 
             this.guna2Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(102)))), ((int)(((byte)(204)))));
+            this.guna2Panel1.Controls.Add(this.guna2ImageButton3);
+            this.guna2Panel1.Controls.Add(this.lblDisplayName);
             this.guna2Panel1.Controls.Add(this.label1);
             this.guna2Panel1.Controls.Add(this.guna2ImageButton2);
             this.guna2Panel1.Controls.Add(this.guna2ImageButton1);
@@ -63,6 +67,32 @@ namespace QuanLyQuanCafe_Nhom14
             this.guna2Panel1.Size = new System.Drawing.Size(1420, 50);
             this.guna2Panel1.TabIndex = 0;
             this.guna2Panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.guna2Panel1_MouseDown);
+            // 
+            // guna2ImageButton3
+            // 
+            this.guna2ImageButton3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.guna2ImageButton3.CheckedState.Parent = this.guna2ImageButton3;
+            this.guna2ImageButton3.HoverState.ImageOffset = new System.Drawing.Point(0, -1);
+            this.guna2ImageButton3.HoverState.ImageSize = new System.Drawing.Size(30, 30);
+            this.guna2ImageButton3.HoverState.Parent = this.guna2ImageButton3;
+            this.guna2ImageButton3.Image = ((System.Drawing.Image)(resources.GetObject("guna2ImageButton3.Image")));
+            this.guna2ImageButton3.Location = new System.Drawing.Point(3, 3);
+            this.guna2ImageButton3.Name = "guna2ImageButton3";
+            this.guna2ImageButton3.PressedState.Parent = this.guna2ImageButton3;
+            this.guna2ImageButton3.Size = new System.Drawing.Size(50, 41);
+            this.guna2ImageButton3.TabIndex = 4;
+            this.guna2ImageButton3.Click += new System.EventHandler(this.guna2ImageButton3_Click);
+            // 
+            // lblDisplayName
+            // 
+            this.lblDisplayName.AutoSize = true;
+            this.lblDisplayName.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDisplayName.ForeColor = System.Drawing.Color.White;
+            this.lblDisplayName.Location = new System.Drawing.Point(59, 13);
+            this.lblDisplayName.Name = "lblDisplayName";
+            this.lblDisplayName.Size = new System.Drawing.Size(43, 17);
+            this.lblDisplayName.TabIndex = 3;
+            this.lblDisplayName.Text = "label2";
             // 
             // label1
             // 
@@ -299,7 +329,8 @@ namespace QuanLyQuanCafe_Nhom14
         private QuanLyBanHang quanLyBanHang1;
         private BaoCao_ThongKe baoCao_ThongKe1;
         private System.Windows.Forms.Label label1;
-        
+        private System.Windows.Forms.Label lblDisplayName;
+        private Guna.UI2.WinForms.Guna2ImageButton guna2ImageButton3;
     }
 }
 

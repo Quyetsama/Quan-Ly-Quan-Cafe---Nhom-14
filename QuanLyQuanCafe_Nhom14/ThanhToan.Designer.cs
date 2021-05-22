@@ -154,6 +154,7 @@ namespace QuanLyQuanCafe_Nhom14
             this.txtTienPhaiThanhToan.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtTienPhaiThanhToan.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtTienPhaiThanhToan.FocusedState.Parent = this.txtTienPhaiThanhToan;
+            this.txtTienPhaiThanhToan.ForeColor = System.Drawing.Color.Red;
             this.txtTienPhaiThanhToan.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtTienPhaiThanhToan.HoverState.Parent = this.txtTienPhaiThanhToan;
             this.txtTienPhaiThanhToan.IconLeft = ((System.Drawing.Image)(resources.GetObject("txtTienPhaiThanhToan.IconLeft")));

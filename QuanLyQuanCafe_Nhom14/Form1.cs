@@ -20,6 +20,8 @@ namespace QuanLyQuanCafe_Nhom14
             this.Text = string.Empty;
             this.ControlBox = false;
             this.DoubleBuffered = true;
+
+            lblDisplayName.Text = Login.disPlayName + " - " + Login.Type;
         }
 
         private void guna2ImageButton2_Click(object sender, EventArgs e)
@@ -53,6 +55,13 @@ namespace QuanLyQuanCafe_Nhom14
         private void btnBaoCaoThongKe_Click(object sender, EventArgs e)
         {
             baoCao_ThongKe1.BringToFront();
+        }
+
+        private void guna2ImageButton3_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            Login fLogin = new Login();
+            fLogin.Show();
         }
     }
 }

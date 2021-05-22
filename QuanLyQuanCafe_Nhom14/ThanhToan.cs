@@ -85,7 +85,6 @@ namespace QuanLyQuanCafe_Nhom14
             e.Graphics.DrawString("HÓA ĐƠN BÁN HÀNG", new Font("Segoe UI", 21, FontStyle.Bold), Brushes.Black, new Point(270, 100));
             e.Graphics.DrawString("Ngày bán: " + DateTime.Now.ToString(), new Font("Arial", 15, FontStyle.Regular), Brushes.Black, new Point(50, 200));
             e.Graphics.DrawString("HĐ: " + idBill, new Font("Arial", 15, FontStyle.Regular), Brushes.Black, new Point(700, 200));
-            e.Graphics.DrawString("NVBH: " + 123, new Font("Arial", 15, FontStyle.Regular), Brushes.Black, new Point(700, 250));
             e.Graphics.DrawString("______________________________________________________________", new Font("Arial", 15, FontStyle.Regular), Brushes.Black, new Point(50, 270));
 
 

@@ -14,6 +14,11 @@ namespace QuanLyQuanCafe_Nhom14
 {
     public partial class Login : Form
     {
+
+        public static string disPlayName = "";
+        public static string Type = "";
+        public static int idAccount = 0;
+
         public Login()
         {
             InitializeComponent();
@@ -34,6 +39,22 @@ namespace QuanLyQuanCafe_Nhom14
         {
             string query = "exec USP_Login @userName , @passWord"; //split ' '
             DataTable result = DataProvider.Instance.ExecuteQuery(query, new object[] { username, password });
+
+            if(result.Rows.Count > 0)
+            {
+                disPlayName = result.Rows[0]["DisplayName"].ToString();
+                Type = result.Rows[0]["Type"].ToString();
+
+                if(Type == "1")
+                {
+                    Type = "Quản lý";
+                }
+                else if(Type == "0")
+                {
+                    Type = "Nhân viên";
+                }
+            }
+           
             return result.Rows.Count > 0;
         }
 
