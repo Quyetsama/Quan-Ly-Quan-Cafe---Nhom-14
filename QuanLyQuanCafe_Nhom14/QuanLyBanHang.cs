@@ -15,9 +15,9 @@ namespace QuanLyQuanCafe_Nhom14
     public partial class QuanLyBanHang : UserControl
     {
 
-        public int IDTable = 0;
-        public string IDFOOD = "";
-        public float TongTienThanhToan = 0;
+        public static int IDTable = 0;
+        public static string IDFOOD = "";
+        public static float TongTienThanhToan = 0;
 
         public QuanLyBanHang()
         {
@@ -69,7 +69,7 @@ namespace QuanLyQuanCafe_Nhom14
         }
 
 
-        void LoadTable()
+        public void LoadTable()
         {
             lvTable.Items.Clear();
 
@@ -121,7 +121,7 @@ namespace QuanLyQuanCafe_Nhom14
             }
         }
 
-        void showBill(int id)
+        public void showBill(int id)
         {
             lvBill.Items.Clear();
             List<BillInfo> listBillInfo = new List<BillInfo>();
@@ -185,6 +185,7 @@ namespace QuanLyQuanCafe_Nhom14
             //}
 
         }
+
 
         //private void lvBill_Click(object sender, EventArgs e)
         //{
@@ -355,6 +356,9 @@ namespace QuanLyQuanCafe_Nhom14
             //label5.Text = IDTable.ToString();
 
             //label5.Text = lvBill.SelectedItems[0].SubItems[5].Text.ToString();
+
+            numericUpDown1.Value = 1;
+
         }
 
         private void lvBill_Click_1(object sender, EventArgs e)
@@ -363,6 +367,8 @@ namespace QuanLyQuanCafe_Nhom14
             string b = lvBill.SelectedItems[0].SubItems[5].Text;
             txtFood.Text = a;
             IDFOOD = b;
+
+            numericUpDown1.Value = 1;
         }
 
         private void datagridFood_CellClick_1(object sender, DataGridViewCellEventArgs e)
@@ -402,12 +408,19 @@ namespace QuanLyQuanCafe_Nhom14
 
             }
 
+
             string idFood = IDFOOD;
             int count = (int)numericUpDown1.Value;
 
             // neu billID = -1, nghia la ban do chua co bill va phai them bill moi
             if (billID == -1)
             {
+
+                if(count <= 0)
+                {
+                    return;
+                }
+
                 // Insert Bill
                 DataProvider.Instance.ExecuteNonQuery("exec USP_InsertBill @idTable", new object[] { IDTable });
                 //label5.Text = IDTable.ToString();
@@ -445,19 +458,25 @@ namespace QuanLyQuanCafe_Nhom14
                 return;
             }
 
-            DataTable dataBill = DataProvider.Instance.ExecuteQuery("select * from Bill where idTable = " + IDTable + "and status = 0");
+            ThanhToan fThanhToan = new ThanhToan();
+            fThanhToan.txtTienPhaiThanhToan.Text = TongTienThanhToan.ToString();
+            fThanhToan.ShowDialog();
+
+            //DataTable dataBill = DataProvider.Instance.ExecuteQuery("select * from Bill where idTable = " + IDTable + "and status = 0");
 
 
 
-            if (dataBill.Rows.Count > 0)
-            {
-                Bill bill = new Bill(dataBill.Rows[0]);
-                DataProvider.Instance.ExecuteNonQuery("exec USP_ThanhToan @idTable , @idBill , @dateCheckOut , @totalPrice", new object[] { IDTable, bill.ID, DateTime.Now.ToString("yyyy.MM.dd"), TongTienThanhToan });
-                showBill(IDTable);
-                LoadTable();
-            }
+            //if (dataBill.Rows.Count > 0)
+            //{
+            //    Bill bill = new Bill(dataBill.Rows[0]);
+            //    DataProvider.Instance.ExecuteNonQuery("exec USP_ThanhToan @idTable , @idBill , @dateCheckOut , @totalPrice", new object[] { IDTable, bill.ID, DateTime.Now.ToString("yyyy.MM.dd"), TongTienThanhToan });
+            showBill(IDTable);
+            LoadTable();
+            //}
         }
 
+
+        //Tim kiem
         private void guna2Button1_Click(object sender, EventArgs e)
         {
             List<Food> listFood = new List<Food>();
