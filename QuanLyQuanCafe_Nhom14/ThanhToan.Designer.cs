@@ -38,6 +38,8 @@ namespace QuanLyQuanCafe_Nhom14
             this.btnThanhToan = new Guna.UI2.WinForms.Guna2Button();
             this.txtTienKhachTra = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtTienPhaiThanhToan = new Guna.UI2.WinForms.Guna2TextBox();
+            this.printDocument1 = new System.Drawing.Printing.PrintDocument();
+            this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
             this.SuspendLayout();
             // 
             // label1
@@ -167,6 +169,21 @@ namespace QuanLyQuanCafe_Nhom14
             this.txtTienPhaiThanhToan.TabIndex = 13;
             this.txtTienPhaiThanhToan.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
+            // printDocument1
+            // 
+            this.printDocument1.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument1_PrintPage);
+            // 
+            // printPreviewDialog1
+            // 
+            this.printPreviewDialog1.AutoScrollMargin = new System.Drawing.Size(0, 0);
+            this.printPreviewDialog1.AutoScrollMinSize = new System.Drawing.Size(0, 0);
+            this.printPreviewDialog1.ClientSize = new System.Drawing.Size(400, 300);
+            this.printPreviewDialog1.Document = this.printDocument1;
+            this.printPreviewDialog1.Enabled = true;
+            this.printPreviewDialog1.Icon = ((System.Drawing.Icon)(resources.GetObject("printPreviewDialog1.Icon")));
+            this.printPreviewDialog1.Name = "printPreviewDialog1";
+            this.printPreviewDialog1.Visible = false;
+            // 
             // ThanhToan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -200,5 +217,7 @@ namespace QuanLyQuanCafe_Nhom14
         private Guna.UI2.WinForms.Guna2Button btnThanhToan;
         private Guna.UI2.WinForms.Guna2TextBox txtTienKhachTra;
         public Guna.UI2.WinForms.Guna2TextBox txtTienPhaiThanhToan;
+        private System.Drawing.Printing.PrintDocument printDocument1;
+        private System.Windows.Forms.PrintPreviewDialog printPreviewDialog1;
     }
 }
