@@ -70,7 +70,6 @@ namespace QuanLyQuanCafe_Nhom14
             // 
             // guna2ImageButton3
             // 
-            this.guna2ImageButton3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.guna2ImageButton3.CheckedState.Parent = this.guna2ImageButton3;
             this.guna2ImageButton3.HoverState.ImageOffset = new System.Drawing.Point(0, -1);
             this.guna2ImageButton3.HoverState.ImageSize = new System.Drawing.Size(30, 30);
