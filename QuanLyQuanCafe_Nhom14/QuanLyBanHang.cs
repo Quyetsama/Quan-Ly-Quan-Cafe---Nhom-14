@@ -86,6 +86,10 @@ namespace QuanLyQuanCafe_Nhom14
             {
                 Table table = new Table(row);
                 tablelist.Add(table);
+                if (table.ID == 19)
+                {
+                    continue;
+                }
 
                 ListViewItem item = new ListViewItem(table.Name.ToString());
                 ListViewItem.ListViewSubItem subitem = new ListViewItem.ListViewSubItem(item, table.ID.ToString());
@@ -359,6 +363,8 @@ namespace QuanLyQuanCafe_Nhom14
 
             numericUpDown1.Value = 1;
 
+            label7.Text = lvTable.SelectedItems[0].SubItems[0].Text.ToString();
+
         }
 
         private void lvBill_Click_1(object sender, EventArgs e)
@@ -490,6 +496,21 @@ namespace QuanLyQuanCafe_Nhom14
             }
             datagridFood.DataSource = data;
             datagridFood.Columns["idCategory"].Visible = false;
+        }
+
+        private void guna2ImageButton1_Click(object sender, EventArgs e)
+        {
+            IDTable = 19;
+
+            showBill(19);
+
+            numericUpDown1.Value = 1;
+            label7.Text = "Mang Về";
+        }
+
+        private void QuanLyBanHang_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
