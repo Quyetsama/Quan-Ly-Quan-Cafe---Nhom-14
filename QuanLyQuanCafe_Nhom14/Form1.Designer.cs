@@ -46,6 +46,7 @@ namespace QuanLyQuanCafe_Nhom14
             this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
             this.baoCao_ThongKe1 = new QuanLyQuanCafe_Nhom14.BaoCao_ThongKe();
             this.quanLyBanHang1 = new QuanLyQuanCafe_Nhom14.QuanLyBanHang();
+            this.quanLyNhanVien1 = new QuanLyQuanCafe_Nhom14.QuanLyNhanVien();
             this.guna2Panel1.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
             this.guna2Panel3.SuspendLayout();
@@ -224,6 +225,7 @@ namespace QuanLyQuanCafe_Nhom14
             this.btnQuanLyNhanVien.Size = new System.Drawing.Size(236, 50);
             this.btnQuanLyNhanVien.TabIndex = 2;
             this.btnQuanLyNhanVien.Text = "Quản Lý Nhân Viên";
+            this.btnQuanLyNhanVien.Click += new System.EventHandler(this.btnQuanLyNhanVien_Click);
             // 
             // btnBaoCaoThongKe
             // 
@@ -265,6 +267,7 @@ namespace QuanLyQuanCafe_Nhom14
             // 
             // guna2Panel3
             // 
+            this.guna2Panel3.Controls.Add(this.quanLyNhanVien1);
             this.guna2Panel3.Controls.Add(this.baoCao_ThongKe1);
             this.guna2Panel3.Controls.Add(this.quanLyBanHang1);
             this.guna2Panel3.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -291,6 +294,14 @@ namespace QuanLyQuanCafe_Nhom14
             this.quanLyBanHang1.Name = "quanLyBanHang1";
             this.quanLyBanHang1.Size = new System.Drawing.Size(1420, 761);
             this.quanLyBanHang1.TabIndex = 0;
+            // 
+            // quanLyNhanVien1
+            // 
+            this.quanLyNhanVien1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.quanLyNhanVien1.Location = new System.Drawing.Point(0, 0);
+            this.quanLyNhanVien1.Name = "quanLyNhanVien1";
+            this.quanLyNhanVien1.Size = new System.Drawing.Size(1420, 761);
+            this.quanLyNhanVien1.TabIndex = 2;
             // 
             // Main
             // 
@@ -330,6 +341,7 @@ namespace QuanLyQuanCafe_Nhom14
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblDisplayName;
         private Guna.UI2.WinForms.Guna2ImageButton guna2ImageButton3;
+        private QuanLyNhanVien quanLyNhanVien1;
     }
 }
 

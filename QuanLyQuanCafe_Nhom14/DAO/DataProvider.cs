@@ -66,7 +66,7 @@ namespace QuanLyQuanCafe_Nhom14.DAO
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString());
+                //MessageBox.Show(ex.ToString());
             }
             return data;
 

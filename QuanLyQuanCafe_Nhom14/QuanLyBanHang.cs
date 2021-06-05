@@ -26,6 +26,11 @@ namespace QuanLyQuanCafe_Nhom14
             LoadCategory();
         }
 
+        private void QuanLyBanHang_Load(object sender, EventArgs e)
+        {
+
+        }
+
         void LoadCategory()
         {
             // Lay danh sach loai san pham
@@ -508,9 +513,12 @@ namespace QuanLyQuanCafe_Nhom14
             label7.Text = "Mang Về";
         }
 
-        private void QuanLyBanHang_Load(object sender, EventArgs e)
-        {
 
+
+        private void txtSearch_Click(object sender, EventArgs e)
+        {
+            txtSearch.Text = "";
+            txtSearch.SelectAll();
         }
     }
 }

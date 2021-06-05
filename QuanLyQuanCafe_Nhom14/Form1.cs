@@ -63,5 +63,10 @@ namespace QuanLyQuanCafe_Nhom14
             Login fLogin = new Login();
             fLogin.Show();
         }
+
+        private void btnQuanLyNhanVien_Click(object sender, EventArgs e)
+        {
+            quanLyNhanVien1.BringToFront();
+        }
     }
 }

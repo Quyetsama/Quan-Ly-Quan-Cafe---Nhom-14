@@ -13,4 +13,5 @@ C:\Users\vanqu\source\repos\QuanLyQuanCafe_Nhom14\QuanLyQuanCafe_Nhom14\obj\x86\
 C:\Users\vanqu\source\repos\QuanLyQuanCafe_Nhom14\QuanLyQuanCafe_Nhom14\obj\x86\Debug\QuanLyQuanCafe_Nhom14.csproj.CopyComplete
 C:\Users\vanqu\source\repos\QuanLyQuanCafe_Nhom14\QuanLyQuanCafe_Nhom14\obj\x86\Debug\QuanLyQuanCafe_Nhom14.exe
 C:\Users\vanqu\source\repos\QuanLyQuanCafe_Nhom14\QuanLyQuanCafe_Nhom14\obj\x86\Debug\QuanLyQuanCafe_Nhom14.pdb
+C:\Users\vanqu\source\repos\QuanLyQuanCafe_Nhom14\QuanLyQuanCafe_Nhom14\obj\x86\Debug\QuanLyQuanCafe_Nhom14.QuanLyNhanVien.resources
 C:\Users\vanqu\source\repos\QuanLyQuanCafe_Nhom14\QuanLyQuanCafe_Nhom14\obj\x86\Debug\QuanLyQuanCafe_Nhom14.csprojAssemblyReference.cache
