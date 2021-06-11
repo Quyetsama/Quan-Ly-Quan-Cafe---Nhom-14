@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,6 +16,8 @@ namespace QuanLyQuanCafe_Nhom14
 {
     public partial class BaoCao_ThongKe : UserControl
     {
+
+        DataTable dataExportExcel;
         public BaoCao_ThongKe()
         {
             InitializeComponent();
@@ -42,6 +45,10 @@ namespace QuanLyQuanCafe_Nhom14
             DateTimeDen.Format = DateTimePickerFormat.Custom;
             DateTimeTu.CustomFormat = "yyyy-MM-dd";
             DateTimeTu.Format = DateTimePickerFormat.Custom;
+
+
+            label6.Text = label7.Text = label10.Text = "Báo cáo ngày hôm nay " + DateTime.Now.ToString("dd-MM-yyyy");
+
 
             cbbThongKe.Items.Add("Doanh Thu");
             cbbThongKe.Items.Add("Sản Phẩm");
@@ -80,6 +87,9 @@ namespace QuanLyQuanCafe_Nhom14
                 {
                     chart1.Series[0].Points.AddXY(item.Date.Value.ToString("yyyy-MM-dd"), (float)item.TotalPrice);
                 }
+
+
+                dataExportExcel = data;
             }
             else
             {
@@ -100,8 +110,32 @@ namespace QuanLyQuanCafe_Nhom14
                 {
                     chart1.Series[0].Points.AddXY(item.TenSP.ToString(), item.DaBan);
                 }
+
+
+                dataExportExcel = dataSanPham;
+            }
+
+
+            try
+            {
+                string doanhThuNow = DataProvider.Instance.ExecuteScalar("select sum(totalPrice) from Bill where DateCheckIn = '" + DateTime.Now.ToString("yyyy-MM-dd") + "' group by DateCheckIn").ToString();
+                lblDoanhThu.Text = doanhThuNow.ToString() + " ₫";
+
+                string hoaDonNow = DataProvider.Instance.ExecuteScalar("select count(DateCheckIn) from Bill where DateCheckIn = '" + DateTime.Now.ToString("yyyy-MM-dd") + "'").ToString();
+                lblSLHoaDon.Text = hoaDonNow.ToString();
+
+                string daBanNow = DataProvider.Instance.ExecuteScalar("select sum(bi.count) from BillInfo as bi, Bill as b where DateCheckIn = '" + DateTime.Now.ToString("yyyy-MM-dd") + "' and bi.idBill = b.id group by b.DateCheckIn").ToString();
+                lblSLDaBan.Text = daBanNow.ToString();
+            }
+            catch (Exception ex)
+            {
+                
             }
             
+
+
+
+
         }
 
         private void btnThongKe_Click(object sender, EventArgs e)
@@ -109,6 +143,27 @@ namespace QuanLyQuanCafe_Nhom14
             ThongKe();
         }
 
-        
+        private void btnExportExcel_Click(object sender, EventArgs e)
+        {
+            FolderBrowserDialog folderBrowserDialog = new FolderBrowserDialog();
+            folderBrowserDialog.RootFolder = Environment.SpecialFolder.Desktop;
+            folderBrowserDialog.ShowNewFolderButton = false;
+
+            if (folderBrowserDialog.ShowDialog() == DialogResult.OK)
+            {
+                ExportExcel obj = new ExportExcel();
+                if (cbbThongKe.Text.ToString() == "Doanh Thu")
+                {
+                    obj.WriteDataTableToExcel(dataExportExcel, "Doanh Thu", folderBrowserDialog.SelectedPath + "\\" + "thongKeDoanhThu.xlsx", "");
+                }
+                else
+                {
+                    obj.WriteDataTableToExcel(dataExportExcel, "Sản Phẩm Đã Bán", folderBrowserDialog.SelectedPath + "\\" + "thongKeSPDaBan.xlsx", "");
+                }
+                    
+
+                MessageBox.Show("Xuất file thống kê thành công!", "Thông Báo");
+            }
+        }
     }
 }

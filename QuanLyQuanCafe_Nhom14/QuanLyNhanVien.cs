@@ -13,6 +13,8 @@ namespace QuanLyQuanCafe_Nhom14
 {
     public partial class QuanLyNhanVien : UserControl
     {
+
+        DataTable data;
         string State = "";
         string ID = "0";
 
@@ -80,7 +82,7 @@ namespace QuanLyQuanCafe_Nhom14
             cbbCalamViec.SelectedIndex = 0;
             cbbCalamViec.BorderRadius = 12;
 
-            DataTable data = DataProvider.Instance.ExecuteQuery("select * from NhanVien");
+            data = DataProvider.Instance.ExecuteQuery("select * from NhanVien");
             dtgNhanVien.DataSource = data;
         }
 
@@ -331,6 +333,22 @@ namespace QuanLyQuanCafe_Nhom14
             }
             
 
+        }
+
+        private void guna2ImageButton1_Click(object sender, EventArgs e)
+        {
+            FolderBrowserDialog folderBrowserDialog = new FolderBrowserDialog();
+            folderBrowserDialog.RootFolder = Environment.SpecialFolder.Desktop;
+            folderBrowserDialog.ShowNewFolderButton = false;
+
+            if (folderBrowserDialog.ShowDialog() == DialogResult.OK)
+            {
+                ExportExcel obj = new ExportExcel();
+                obj.WriteDataTableToExcel(data, "Nhân Viên", folderBrowserDialog.SelectedPath + "\\" + "nhanVien.xlsx", "");
+
+
+                MessageBox.Show("Xuất file nhân viên thành công!", "Thông Báo");
+            }
         }
     }
 }
