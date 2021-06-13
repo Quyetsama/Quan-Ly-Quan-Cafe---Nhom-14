@@ -54,7 +54,15 @@ namespace QuanLyQuanCafe_Nhom14
 
         private void btnBaoCaoThongKe_Click(object sender, EventArgs e)
         {
-            baoCao_ThongKe1.BringToFront();
+            
+            if (Login.Type != "Quản lý")
+            {
+                MessageBox.Show("Bạn không có quyền truy cập!", "Thông báo");
+            }
+            else
+            {
+                baoCao_ThongKe1.BringToFront();
+            }
         }
 
         private void guna2ImageButton3_Click(object sender, EventArgs e)
@@ -66,7 +74,55 @@ namespace QuanLyQuanCafe_Nhom14
 
         private void btnQuanLyNhanVien_Click(object sender, EventArgs e)
         {
-            quanLyNhanVien1.BringToFront();
+            
+            if (Login.Type != "Quản lý")
+            {
+                MessageBox.Show("Bạn không có quyền truy cập!", "Thông báo");
+            }
+            else
+            {
+                quanLyNhanVien1.BringToFront();
+            }
+        }
+
+        private void btnSanPham_Click(object sender, EventArgs e)
+        {
+            
+            if (Login.Type != "Quản lý")
+            {
+                MessageBox.Show("Bạn không có quyền truy cập!", "Thông báo");
+            }
+            else
+            {
+                quanLySanPham1.BringToFront();
+            }
+        }
+
+        private void btnLoaiSanPham_Click(object sender, EventArgs e)
+        {
+            
+            if (Login.Type != "Quản lý")
+            {
+                MessageBox.Show("Bạn không có quyền truy cập!", "Thông báo");
+            }
+            else
+            {
+                danhMuc1.BringToFront();
+            }
+        }
+
+        private void btnQuanLyBan_Click(object sender, EventArgs e)
+        {
+            
+
+            if (Login.Type != "Quản lý")
+            {
+                MessageBox.Show("Bạn không có quyền truy cập!", "Thông báo");
+            }
+            else
+            {
+                quanLyban1.BringToFront();
+            }
         }
     }
 }

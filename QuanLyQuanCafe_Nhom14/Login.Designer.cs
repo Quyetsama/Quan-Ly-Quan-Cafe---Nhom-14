@@ -156,7 +156,7 @@ namespace QuanLyQuanCafe_Nhom14
             // 
             this.txtPassWord.BorderRadius = 20;
             this.txtPassWord.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtPassWord.DefaultText = "";
+            this.txtPassWord.DefaultText = "1";
             this.txtPassWord.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.txtPassWord.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.txtPassWord.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
@@ -174,6 +174,7 @@ namespace QuanLyQuanCafe_Nhom14
             this.txtPassWord.PasswordChar = '\0';
             this.txtPassWord.PlaceholderText = "";
             this.txtPassWord.SelectedText = "";
+            this.txtPassWord.SelectionStart = 1;
             this.txtPassWord.ShadowDecoration.Parent = this.txtPassWord;
             this.txtPassWord.Size = new System.Drawing.Size(247, 40);
             this.txtPassWord.TabIndex = 5;
@@ -183,7 +184,7 @@ namespace QuanLyQuanCafe_Nhom14
             // 
             this.txtUserName.BorderRadius = 20;
             this.txtUserName.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtUserName.DefaultText = "";
+            this.txtUserName.DefaultText = "admin";
             this.txtUserName.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.txtUserName.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.txtUserName.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
@@ -200,6 +201,7 @@ namespace QuanLyQuanCafe_Nhom14
             this.txtUserName.PasswordChar = '\0';
             this.txtUserName.PlaceholderText = "";
             this.txtUserName.SelectedText = "";
+            this.txtUserName.SelectionStart = 5;
             this.txtUserName.ShadowDecoration.Parent = this.txtUserName;
             this.txtUserName.Size = new System.Drawing.Size(247, 40);
             this.txtUserName.TabIndex = 4;

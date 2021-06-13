@@ -44,9 +44,12 @@ namespace QuanLyQuanCafe_Nhom14
             this.btnBaoCaoThongKe = new Guna.UI2.WinForms.Guna2Button();
             this.btnQuanLyBanHang = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
+            this.danhMuc1 = new QuanLyQuanCafe_Nhom14.DanhMuc();
+            this.quanLySanPham1 = new QuanLyQuanCafe_Nhom14.QuanLySanPham();
+            this.quanLyNhanVien1 = new QuanLyQuanCafe_Nhom14.QuanLyNhanVien();
             this.baoCao_ThongKe1 = new QuanLyQuanCafe_Nhom14.BaoCao_ThongKe();
             this.quanLyBanHang1 = new QuanLyQuanCafe_Nhom14.QuanLyBanHang();
-            this.quanLyNhanVien1 = new QuanLyQuanCafe_Nhom14.QuanLyNhanVien();
+            this.quanLyban1 = new QuanLyQuanCafe_Nhom14.QuanLyban();
             this.guna2Panel1.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
             this.guna2Panel3.SuspendLayout();
@@ -171,6 +174,7 @@ namespace QuanLyQuanCafe_Nhom14
             this.btnQuanLyBan.Size = new System.Drawing.Size(240, 50);
             this.btnQuanLyBan.TabIndex = 5;
             this.btnQuanLyBan.Text = "Quản Lý Bàn";
+            this.btnQuanLyBan.Click += new System.EventHandler(this.btnQuanLyBan_Click);
             // 
             // btnLoaiSanPham
             // 
@@ -189,6 +193,7 @@ namespace QuanLyQuanCafe_Nhom14
             this.btnLoaiSanPham.Size = new System.Drawing.Size(236, 50);
             this.btnLoaiSanPham.TabIndex = 4;
             this.btnLoaiSanPham.Text = "      Quản Lý Loại Sản Phẩm";
+            this.btnLoaiSanPham.Click += new System.EventHandler(this.btnLoaiSanPham_Click);
             // 
             // btnSanPham
             // 
@@ -207,6 +212,7 @@ namespace QuanLyQuanCafe_Nhom14
             this.btnSanPham.Size = new System.Drawing.Size(236, 50);
             this.btnSanPham.TabIndex = 3;
             this.btnSanPham.Text = "Quản Lý Sản Phẩm";
+            this.btnSanPham.Click += new System.EventHandler(this.btnSanPham_Click);
             // 
             // btnQuanLyNhanVien
             // 
@@ -267,6 +273,9 @@ namespace QuanLyQuanCafe_Nhom14
             // 
             // guna2Panel3
             // 
+            this.guna2Panel3.Controls.Add(this.quanLyban1);
+            this.guna2Panel3.Controls.Add(this.danhMuc1);
+            this.guna2Panel3.Controls.Add(this.quanLySanPham1);
             this.guna2Panel3.Controls.Add(this.quanLyNhanVien1);
             this.guna2Panel3.Controls.Add(this.baoCao_ThongKe1);
             this.guna2Panel3.Controls.Add(this.quanLyBanHang1);
@@ -276,6 +285,30 @@ namespace QuanLyQuanCafe_Nhom14
             this.guna2Panel3.ShadowDecoration.Parent = this.guna2Panel3;
             this.guna2Panel3.Size = new System.Drawing.Size(1420, 761);
             this.guna2Panel3.TabIndex = 2;
+            // 
+            // danhMuc1
+            // 
+            this.danhMuc1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.danhMuc1.Location = new System.Drawing.Point(0, 0);
+            this.danhMuc1.Name = "danhMuc1";
+            this.danhMuc1.Size = new System.Drawing.Size(1420, 761);
+            this.danhMuc1.TabIndex = 4;
+            // 
+            // quanLySanPham1
+            // 
+            this.quanLySanPham1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.quanLySanPham1.Location = new System.Drawing.Point(0, 0);
+            this.quanLySanPham1.Name = "quanLySanPham1";
+            this.quanLySanPham1.Size = new System.Drawing.Size(1420, 761);
+            this.quanLySanPham1.TabIndex = 3;
+            // 
+            // quanLyNhanVien1
+            // 
+            this.quanLyNhanVien1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.quanLyNhanVien1.Location = new System.Drawing.Point(0, 0);
+            this.quanLyNhanVien1.Name = "quanLyNhanVien1";
+            this.quanLyNhanVien1.Size = new System.Drawing.Size(1420, 761);
+            this.quanLyNhanVien1.TabIndex = 2;
             // 
             // baoCao_ThongKe1
             // 
@@ -295,13 +328,13 @@ namespace QuanLyQuanCafe_Nhom14
             this.quanLyBanHang1.Size = new System.Drawing.Size(1420, 761);
             this.quanLyBanHang1.TabIndex = 0;
             // 
-            // quanLyNhanVien1
+            // quanLyban1
             // 
-            this.quanLyNhanVien1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.quanLyNhanVien1.Location = new System.Drawing.Point(0, 0);
-            this.quanLyNhanVien1.Name = "quanLyNhanVien1";
-            this.quanLyNhanVien1.Size = new System.Drawing.Size(1420, 761);
-            this.quanLyNhanVien1.TabIndex = 2;
+            this.quanLyban1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.quanLyban1.Location = new System.Drawing.Point(0, 0);
+            this.quanLyban1.Name = "quanLyban1";
+            this.quanLyban1.Size = new System.Drawing.Size(1420, 761);
+            this.quanLyban1.TabIndex = 5;
             // 
             // Main
             // 
@@ -342,6 +375,9 @@ namespace QuanLyQuanCafe_Nhom14
         private System.Windows.Forms.Label lblDisplayName;
         private Guna.UI2.WinForms.Guna2ImageButton guna2ImageButton3;
         private QuanLyNhanVien quanLyNhanVien1;
+        private QuanLySanPham quanLySanPham1;
+        private DanhMuc danhMuc1;
+        private QuanLyban quanLyban1;
     }
 }
 

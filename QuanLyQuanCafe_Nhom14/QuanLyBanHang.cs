@@ -36,7 +36,7 @@ namespace QuanLyQuanCafe_Nhom14
             // Lay danh sach loai san pham
             List<Category> listCategory = new List<Category>();
 
-            string queryCategory = "select * from FoodCategory";
+            string queryCategory = "select * from FoodCategory where status = N'Đang hoạt động'";
 
             DataTable dataCategory = DataProvider.Instance.ExecuteQuery(queryCategory);
 
@@ -55,21 +55,22 @@ namespace QuanLyQuanCafe_Nhom14
         void LoadFoodListByCategoryID(int id)
         {
             // Lay danh sach san pham theo loia san pham
-            List<Food> listFood = new List<Food>();
+            //List<Food> listFood = new List<Food>();
 
-            string queryFood = "select * from Food where idCategory = " + id;
+            string queryFood = "select * from Food where idCategory = " + id + "and status = N'Đang hoạt động'";
 
             DataTable dataFood = DataProvider.Instance.ExecuteQuery(queryFood);
 
-            foreach (DataRow row in dataFood.Rows)
-            {
-                Food food = new Food(row);
-                listFood.Add(food);
-            }
+            //foreach (DataRow row in dataFood.Rows)
+            //{
+            //    Food food = new Food(row);
+            //    listFood.Add(food);
+            //}
 
 
             datagridFood.DataSource = dataFood;
             datagridFood.Columns["idCategory"].Visible = false;
+            datagridFood.Columns["status"].Visible = false;
 
         }
 
@@ -490,19 +491,20 @@ namespace QuanLyQuanCafe_Nhom14
         //Tim kiem
         private void guna2Button1_Click(object sender, EventArgs e)
         {
-            List<Food> listFood = new List<Food>();
+            //List<Food> listFood = new List<Food>();
 
-            string query = string.Format("select * from Food where name like N'%{0}%'", txtSearch.Text);
+            string query = string.Format("select * from Food where name like N'%{0}%' and status = N'Đang hoạt động'", txtSearch.Text);
             DataTable data = DataProvider.Instance.ExecuteQuery(query);
-            foreach(DataRow row in data.Rows)
-            {
-                Food food = new Food(row);
-                listFood.Add(food);
-            }
+            //foreach(DataRow row in data.Rows)
+            //{
+            //    Food food = new Food(row);
+            //    listFood.Add(food);
+            //}
             datagridFood.DataSource = data;
             datagridFood.Columns["idCategory"].Visible = false;
         }
 
+        //Mang ve
         private void guna2ImageButton1_Click(object sender, EventArgs e)
         {
             IDTable = 19;
